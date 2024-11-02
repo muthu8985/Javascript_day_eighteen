@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript_day_eighteen</title>
+  </head>
+  <body>
+    <p id="demo">
+      Modules-JavaScript modules allow you to break up your code into separate
+      files.
+    </p>
+    <!-- <script src="index.js"></script> -->
+    <script type="module">
+      import message from "./index.js";
+      document.getElementById("demo").innerHTML = message();
+    </script>
+    <p>
+      JSON is a format for storing and transporting data. JSON is often used
+      when data is sent from a server to a web page.
+    </p>
+    <p>
+      What is JSON? JSON stands for JavaScript Object Notation JSON is a
+      lightweight data interchange format JSON is language independent * JSON is
+      "self-describing" and easy to understand
+    </p>
+    <p id="json">
+      let text = '{ "employees" : [' + '{ "firstName":"John" , "lastName":"Doe"
+      },' + '{ "firstName":"Anna" , "lastName":"Smith" },' + '{
+      "firstName":"Peter" , "lastName":"Jones" } ]}';
+    </p>
+    <script>
+      let text =
+        '{"employees":[' +
+        '{"firstName":"John","lastName":"Doe" },' +
+        '{"firstName":"Anna","lastName":"Smith" },' +
+        '{"firstName":"Peter","lastName":"Jones" }]}';
+
+      const obj = JSON.parse(text);
+      document.getElementById("json").innerHTML =
+        obj.employees[1].firstName + " " + obj.employees[1].lastName;
+    </script>
+    <p>
+      Code Debugging Programming code might contain syntax errors, or logical
+      errors. Many of these errors are difficult to diagnose. JavaScript
+      Debuggers Debugging is not easy. But fortunately, all modern browsers have
+      a built-in JavaScript debugger. Built-in debuggers can be turned on and
+      off, forcing errors to be reported to the user.
+    </p>
+    <p>
+      Activate debugging in your browser (Chrome, IE, Firefox) with F12, and
+      select "Console" in the debugger menu.
+    </p>
+
+    <script>
+      a = 5;
+      b = 6;
+      c = a + b;
+      console.log(c);
+    </script>
+    <p>
+      Variable Names At W3schools we use camelCase for identifier names
+      (variables and functions). All names start with a letter. Spaces Around
+      Operators Always put spaces around operators ( = + - * / ), and after
+      commas: Code Indentation Always use 2 spaces for indentation of code
+      blocks: Statement Rules General rules for simple statements: Always end a
+      simple statement with a semicolon.
+    </p>
+    <p>
+      Best practices Avoid Using eval() The eval() function is used to run text
+      as code. In almost all cases, it should not be necessary to use it.
+      Because it allows arbitrary code to be run, it also represents a security
+      problem.
+    </p>
+    <p>Reduce DOM Access</p>
+    <script>
+      const objs = document.getElementById("demo");
+      objs.innerHTML = "Hello";
+    </script>
+    <p>
+      Avoid Using with Avoid using the with keyword. It has a negative effect on
+      speed. It also clutters up JavaScript scopes. The with keyword is not
+      allowed in strict mode.
+    </p>
+  </body>
+</html>
